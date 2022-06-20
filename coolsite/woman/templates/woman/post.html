@@ -1,0 +1,11 @@
+{% extends 'woman/Base_html.html' %}
+
+{% block content %}
+<h1>{{posts.title}}</h1>
+
+{% if posts.photo %} <!-- Если есть фото то показываем фото -->
+<p><img class = 'img-article-left' src = "{{posts.photo.url}}"></p>
+{% endif %}
+
+{{posts.content|linebreaks}}<!-- здесь отображаем контент с фильтром linebreaks(добовляет теги абзацев в статью)-->
+{% endblock %}
